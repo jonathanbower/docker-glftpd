@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Set timezone
+if [ ! -z "${TZ}" ]; then
+  ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+fi
+
+# Reset binary arguments
+if [ ! -z "${GL_RESET_ARGS}" ]; then
+  echo "0  0 * * *      /glftpd/bin/reset -r /glftpd/ftp-data/glftpd.conf ${GL_RESET_ARGS}" | crontab -
+fi
+
+# Change listening port
+if [ ! -z "${GL_PORT}" ]; then
+  sed -i "s/^glftpd.*/glftpd   $GL_PORT\/tcp/" /etc/services
+fi
+
+# Copy binaries if data dir is empty
+cp -npr /glftpd/ftp-data-dist/* /glftpd/ftp-data/
+
+# Remove boot service
+rm -rf /etc/service/boot
