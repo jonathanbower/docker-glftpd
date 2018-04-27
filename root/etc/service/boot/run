@@ -3,6 +3,7 @@
 # Set timezone
 if [ ! -z "${TZ}" ]; then
   ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+  cp /usr/share/zoneinfo/$TZ /glftpd/etc/localtime
 fi
 
 # Reset binary arguments
