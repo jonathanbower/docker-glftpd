@@ -85,4 +85,5 @@ make install
 
 ## Versions
 
-+ **v2.08:** Initial release.
++ **v2:** Use glftpd 2.09
++ **v1:** Initial release.

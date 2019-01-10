@@ -1,6 +1,7 @@
 #!/bin/bash
 # To install tzdata noninteractive
 export DEBIAN_FRONTEND=noninteractive
+export tgz_name="glftpd-LNX-2.09_1.1.0j_x64"
 
 # Install necessary packages
 apt-get update
@@ -11,10 +12,10 @@ service xinetd start
 
 # Download and install glftpd
 cd /root
-wget https://glftpd.eu/files/glftpd-LNX-2.08_1.1.0g_x64.tgz
-tar xzvf glftpd-LNX-2.08_1.1.0g_x64.tgz
-rm glftpd-LNX-2.08_1.1.0g_x64.tgz
-cd glftpd-LNX-2.08_1.1.0g_x64
+wget https://glftpd.io/files/${tgz_name}.tgz
+tar xzvf ${tgz_name}.tgz
+rm ${tgz_name}.tgz
+cd ${tgz_name}
 { echo; echo n; echo n; echo; echo; echo; echo x; echo n; echo /ftp-data; echo; echo; echo; } | ./installgl.sh
 # ^ bug on line 1251, //ftp-data
 
