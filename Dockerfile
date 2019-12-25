@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.10.1
+FROM phusion/baseimage:0.11
 CMD ["/sbin/my_init"]
 COPY root/ /
 RUN /root/glinstall.sh

@@ -64,7 +64,7 @@ mv /root/glftpd-LNX-*_x64/ftpd-ecdsa.pem /glftpd/ftp-data
 ## Using an existing glftpd installation
 /etc/passwd, /etc/groups, /etc/ftpd-ecdsa.pem and glftpd.conf is re-located to the /glftpd/ftp-data/ directory.
 
-Make sure your glftpd.conf updated accordingly:
+Make sure your glftpd.conf is updated accordingly:
 
 ```
 CERT_FILE /glftpd/ftp-data/ftpd-ecdsa.pem
@@ -85,5 +85,6 @@ make install
 
 ## Versions
 
++ **v3:** Use glftpd 2.10
 + **v2:** Use glftpd 2.09
 + **v1:** Initial release.

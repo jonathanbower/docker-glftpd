@@ -1,7 +1,7 @@
 #!/bin/bash
 # To install tzdata noninteractive
 export DEBIAN_FRONTEND=noninteractive
-export tgz_name="glftpd-LNX-2.09_1.1.0j_x64"
+export tgz_name="glftpd-LNX-2.10_1.1.1d_x64"
 
 # Install necessary packages
 apt-get update
@@ -29,6 +29,9 @@ mv /glftpd/etc/passwd /glftpd/ftp-data/
 mv /glftpd/etc/group /glftpd/ftp-data/
 sed -i '/^datapath/a pwd_path        /ftp-data/passwd' /glftpd/ftp-data/glftpd.conf
 sed -i '/^pwd_path/a grp_path        /ftp-data/group' /glftpd/ftp-data/glftpd.conf
+
+# change to static version since glibc 2.28 is required from version 2.10
+cp /glftpd/bin/glftpd-full-static /glftpd/bin/glftpd
 
 # disable IPV6
 sed -i 's/IPv6$//' /etc/xinetd.d/glftpd
