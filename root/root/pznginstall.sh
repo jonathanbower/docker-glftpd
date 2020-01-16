@@ -5,7 +5,7 @@ unzip master.zip -d /glftpd/ftp-data/
 rm master.zip
 cd /glftpd/ftp-data/pzs-ng-master
 apt-get update
-apt-get install -y gcc file make libssl-dev
+install_clean gcc file make libssl-dev libc6-dev
 ./configure
 sed -i 's/#define sfv_dirs.*/#define sfv_dirs                     "\/site\/x264\/ \/site\/tv\/ \/site\/dvdr\/ \/site\/games\ \/site\/requests\/ \/site\/x265\/ \/site\/xvid\/\"/' zipscript/conf/zsconfig.h
 make

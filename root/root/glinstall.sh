@@ -5,7 +5,7 @@ export tgz_name="glftpd-LNX-2.10_1.1.1d_x64"
 
 # Install necessary packages
 apt-get update
-apt-get install -y wget ftp unzip zip xinetd tzdata unrar
+install_clean wget ftp unzip zip xinetd tzdata unrar
 
 # Start xinetd so installer will go through without complaining
 service xinetd start
@@ -44,4 +44,3 @@ sed -i '/^DHPARAM_FILE/s/^/#/g' $data_path/glftpd.conf
 cp /usr/bin/unrar /glftpd/bin/
 cp /usr/lib/x86_64-linux-gnu/libstdc++.so.6 /glftpd/lib/x86_64-linux-gnu/
 cp /lib/x86_64-linux-gnu/libgcc_s.so.1 /glftpd/lib/x86_64-linux-gnu/
-
