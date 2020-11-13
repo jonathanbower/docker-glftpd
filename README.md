@@ -47,7 +47,7 @@ Set GL_RESET_ARGS to "-e" to reset stats on Mondays instead of Sundays
 Login with glftpd as username and password
 ```
 ftp localhost <port>
-site adduser <username> <password> *@*
+site adduser <username> <password> <username>@<ip>
 site change <username> flags +1
 site change <username> ratio 0
 site deluser glftpd`
@@ -85,6 +85,7 @@ make install
 
 ## Versions
 
++ **v4:** Use glftpd 2.11 BETA3
 + **v3:** Use glftpd 2.10
 + **v2:** Use glftpd 2.09
 + **v1:** Initial release.
