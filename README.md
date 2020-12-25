@@ -85,6 +85,7 @@ make install
 
 ## Versions
 
++ **v5:** Use glftpd 2.11
 + **v4:** Use glftpd 2.11 BETA3
 + **v3:** Use glftpd 2.10
 + **v2:** Use glftpd 2.09
