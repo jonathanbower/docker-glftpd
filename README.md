@@ -85,6 +85,7 @@ make install
 
 ## Versions
 
++ **v7:** Use glftpd 2.11a (using openssl-1.1.1k)
 + **v6:** Use glftpd 2.11a
 + **v5:** Use glftpd 2.11
 + **v4:** Use glftpd 2.11 BETA3
