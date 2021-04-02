@@ -5,7 +5,7 @@ unzip master.zip -d /glftpd/ftp-data/
 rm master.zip
 cd /glftpd/ftp-data/pzs-ng-master
 apt-get update
-install_clean gcc file make libssl-dev libc6-dev
+install_clean gcc file make libssl-dev libc6-dev lynx
 ./configure
 sed -i 's/#define sfv_dirs.*/#define sfv_dirs                     "\/site\/x264\/ \/site\/tv\/ \/site\/dvdr\/ \/site\/games\ \/site\/requests\/ \/site\/x265\/ \/site\/xvid\/\"/' zipscript/conf/zsconfig.h
 make
@@ -31,3 +31,15 @@ custom-reqfilled       *
 custom-requests        *
 custom-reqdel          *
 custom-reqwipe         *" >> /glftpd/ftp-data/glftpd.conf
+
+#psxc-imdb
+
+# Install psxc-imdb
+cd /glftpd/ftp-data/pzs-ng-master/scripts/psxc-imdb
+if [ -f ".install.vars" ] ; then rm .install.vars ; fi
+if [ -d ".install" ] ; then rm -rf .install ; fi
+{ echo 7; echo; echo ; echo "/glftpd/ftp-data/glftpd.conf"; echo -; echo; echo ; echo n; echo ; echo n; echo; echo n; echo ; echo n; echo ; echo n; echo ; echo n; echo ; echo n; echo ; echo n; echo; echo n; echo ; echo ; echo; echo ; echo ; echo n; echo n; echo ; echo x; } | TERM=xterm ./installer.sh
+
+# install dependencies
+cd /glftpd/ftp-data/pzs-ng-master/scripts/psxc-imdb/extras
+{ echo ; echo ; } | ./psxc-imdb-sanity.sh
