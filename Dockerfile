@@ -1,5 +1,6 @@
 FROM phusion/baseimage:0.11
 CMD ["/sbin/my_init"]
+RUN rm -rf /etc/service
 COPY root/ /
 RUN /root/glinstall.sh && /root/pznginstall.sh
 VOLUME /glftpd/site /glftpd/ftp-data
