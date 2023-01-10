@@ -1,11 +1,11 @@
-[appurl]: https://glftpd.eu/
+[appurl]: https://glftpd.io/
 [hub]: https://hub.docker.com/r/jonarin/glftpd/
 
 # jonarin/glftpd
 
-[![glFTPd](https://glftpd.eu/media/logo.gif)][appurl]
+[![glFTPd](https://glftpd.io/media/logo.gif)][appurl]
 
-[glFTPd](https://glftpd.eu/) is a free FTP server for UNIX based systems. It is highly configurable and its possibilities are endless. One of the main differences between many other ftp servers and glFTPd is that it has its own user database which can be completely maintained online using ftp site commands. glFTPd runs within a chroot environment which makes it relatively safe.
+[glFTPd](https://glftpd.io/) is a free FTP server for UNIX based systems. It is highly configurable and its possibilities are endless. One of the main differences between many other ftp servers and glFTPd is that it has its own user database which can be completely maintained online using ftp site commands. glFTPd runs within a chroot environment which makes it relatively safe.
 
 glFTPd has numerous features making many complex and complicated setups possible. A number of the most important features are:
 
