@@ -1,7 +1,4 @@
-#!/bin/bash
+#!/bin/sh
+# Start glftpd
+exec /usr/sbin/xinetd -pidfile /run/xinetd.pid -stayalive -inetd_compat -inetd_ipv6 -dontfork
 
-# Start glfpd
-if ! pid=$(pgrep xinetd);
-then
-	service xinetd start
-fi

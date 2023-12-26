@@ -26,7 +26,7 @@ docker create \
   --name=glFTPd \
   --net=host \
   -v <path to ftp-data>:/glftpd/ftp-data \
-  -v <path to site-data:/glftpd/site \
+  -v <path to site-data>:/glftpd/site \
   -e GL_PORT=<port> \
   -e TZ=<timezone> \
   -e GL_RESET_ARGS=<arguments> \
