@@ -17,6 +17,11 @@ if [ ! -z "${GL_PORT}" ]; then
   sed -i "s/^glftpd.*/glftpd   $GL_PORT\/tcp/" /etc/services
 fi
 
+# Set server arguments
+if [ ! -z "${GL_SERVER_ARGS}" ]; then
+  sed -i "s/server_args.*/server_args     = $GL_SERVER_ARGS -r \/glftpd\/ftp-data\/glftpd.conf/" /etc/xinetd.d/glftpd
+fi
+
 # Copy binaries if data dir is empty
 cp -npr /glftpd/ftp-data-dist/* /glftpd/ftp-data/
 

@@ -30,6 +30,7 @@ docker create \
   -e GL_PORT=<port> \
   -e TZ=<timezone> \
   -e GL_RESET_ARGS=<arguments> \
+  -e GL_SERVER_ARGS=<argument> \
   jonarin/glftpd
 ```
 ## Parameters
@@ -39,6 +40,7 @@ docker create \
 * `-e GL_PORT` - FTP listen port [1337]
 * `-e TZ` - for timezone information *eg Europe/Stockholm* [UTC]
 * `-e GL_RESET_ARGS` - Argumets to glreset
+* `-e GL_SERVER_ARGS` - Overwrites default server_args `-l -i -o`
 
 Set GL_RESET_ARGS to "-e" to reset stats on Mondays instead of Sundays
 
