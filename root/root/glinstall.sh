@@ -1,7 +1,7 @@
 #!/bin/bash
 # To install tzdata noninteractive
 export DEBIAN_FRONTEND=noninteractive
-export tgz_name="glftpd-LNX-2.13a_3.0.8_x64"
+export tgz_name="glftpd-LNX-2.14a_3.0.12_x64"
 
 # Install necessary packages
 apt-get update
