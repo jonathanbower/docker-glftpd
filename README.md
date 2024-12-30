@@ -81,6 +81,7 @@ pz-ng is configured to monitor x264,x265,tv,dvdr,games,requests and xvid. To mak
 docker exec -it glftpd /bin/bash
 cd /glftpd/ftp-data/pzs-ng-master
 vi zipscript/conf/zsconfig.h
-make
+make distclean
+./configure
 make install
 ```
