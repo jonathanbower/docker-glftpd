@@ -8,6 +8,9 @@ apt-get update
 install_clean gcc file make libssl-dev libc6-dev lynx
 ./configure
 sed -i 's/#define sfv_dirs.*/#define sfv_dirs                     "\/site\/x264\/ \/site\/tv\/ \/site\/dvdr\/ \/site\/games\ \/site\/requests\/ \/site\/x265\/ \/site\/xvid\/\"/' zipscript/conf/zsconfig.h
+sed -i 's/define GROUPFILE .*/define GROUPFILE                                 "\/ftp-data\/group\"/' zipscript/include/zsconfig.defaults.h
+sed -i 's/define PASSWDFILE .*/define PASSWDFILE                                "\/ftp-data\/passwd\"/' zipscript/include/zsconfig.defaults.h
+sed -i 's/etc\/group/ftp-data\/group/g' scripts/audio-genre/audio-genre-create.sh
 make
 make install
 echo "
@@ -43,3 +46,6 @@ if [ -d ".install" ] ; then rm -rf .install ; fi
 # install dependencies
 cd /glftpd/ftp-data/pzs-ng-master/scripts/psxc-imdb/extras
 { echo ; echo ; } | ./psxc-imdb-sanity.sh
+
+# For audio_script
+chmod +s /glftpd/bin/ng-chown
